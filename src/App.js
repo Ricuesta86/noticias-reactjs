@@ -13,7 +13,7 @@ class App extends Component {
     this.consultarNoticias();
   }
 
-  consultarNoticias=()=>{
+  consultarNoticias=(categoria='general')=>{
 
     const apiKey='8a608a344eb343c8b515b4190ad9f2c8'
 
@@ -38,7 +38,9 @@ class App extends Component {
       <div className="contenedor-app">
         <Header titulo='Noticias'/>
         <div className="container white contenedor-noticias">
-          <Formulario />
+          <Formulario 
+            consultarNoticias={this.consultarNoticias}
+          />
           <Noticias 
             noticias={this.state.noticias}
           />
