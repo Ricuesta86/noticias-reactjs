@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Noticia = (props) => {
 
@@ -24,6 +25,15 @@ const Noticia = (props) => {
     )
 }
 
+Noticia.propTypes={
+    noticia:PropTypes.shape({
+        url:PropTypes.string,
+        urlToImage: PropTypes.string,
+        title:PropTypes.string,
+        description:PropTypes.string,
+        source:PropTypes.object
+    }).isRequired 
+}
 export default Noticia
 
 
